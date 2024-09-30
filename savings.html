@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings Goals Tracker</title>
+    <link rel="stylesheet" href="savings-goals1.css">
+</head>
+<body>
+    <header>
+        <h1>Savings Goals Tracker</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="income_expense_form.html">Income/Expense</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="savings.html">Savings</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a>Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="create-goal">
+            <h2>Create New Savings Goal</h2>
+            <form id="goal-form">
+                <input type="text" id="goal-name" placeholder="Goal Name" required>
+                <input type="number" id="goal-amount" placeholder="Target Amount" required>
+                <input type="date" id="goal-date" required>
+                <button type="submit">Create Goal</button>
+            </form>
+        </section>
+
+        <section id="goals-list">
+            <h2>Your Savings Goals</h2>
+            <div id="goals-container"></div>
+        </section>
+
+        <section id="goal-timeline">
+            <h2>Goals Timeline</h2>
+            <div id="timeline-container"></div>
+        </section>
+    </main>
+
+
+    <script src="savings-goals.js"></script>
+</body>
+</html>

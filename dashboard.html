@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Dashboard</title>
+    <link rel="stylesheet" href="dashboard2.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Financial Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="income_expense_form.html">Income/Expense</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="savings.html">Savings</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a>Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="overview">
+            <h2>Financial Overview</h2>
+            <div id="time-period">
+                <label for="period-select">Time Period:</label>
+                <select id="period-select">
+                    <option value="month">This Month</option>
+                    <option value="quarter">This Quarter</option>
+                    <option value="year">This Year</option>
+                </select>
+            </div>
+            <div id="charts">
+                <div id="income-expense-chart">
+                    <canvas id="pie-chart"></canvas>
+                </div>
+                <div id="spending-chart">
+                    <canvas id="bar-chart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="account-balances">
+            <h2>Account Balances</h2>
+            <ul id="balance-list"></ul>
+        </section>
+
+        <section id="recent-transactions">
+            <h2>Recent Transactions</h2>
+            <ul id="transaction-list"></ul>
+        </section>
+
+        <section id="financial-health">
+            <h2>Financial Health Score</h2>
+            <div id="health-score"></div>
+        </section>
+
+        <section id="quick-actions">
+            <h2>Quick Actions</h2>
+            <button id="add-income">Add Income</button>
+            <button id="add-expense">Add Expense</button>
+        </section>
+    </main>
+
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

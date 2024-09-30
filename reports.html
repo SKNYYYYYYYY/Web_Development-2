@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Reports</title>
+    <link rel="stylesheet" href="financial_reports.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="financial_reports.js" defer></script>
+    <link rel="stylesheet" href="reports.css">
+</head>
+<body>
+    <header>
+        <h1>Financial Report</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="income_expense_form.html">Income/Expense</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="savings.html">Savings</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a>Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2></h2>
+
+    <!-- Date range picker -->
+    <label for="start-date">Start Date:</label>
+    <input type="date" id="start-date">
+    <label for="end-date">End Date:</label>
+    <input type="date" id="end-date">
+    <button id="generate-report">Generate Report</button>
+
+    <!-- Checkbox for categories -->
+    <div id="category-filters">
+        <label><input type="checkbox" value="Food" checked> Food</label>
+        <label><input type="checkbox" value="Rent" checked> Rent</label>
+        <label><input type="checkbox" value="Entertainment" checked> Entertainment</label>
+    </div>
+
+    <!-- Graphs and Charts -->
+    <div id="charts">
+        <canvas id="income-vs-expenses"></canvas>
+        <canvas id="savings-progress"></canvas>
+        <canvas id="category-breakdown"></canvas>
+    </div>
+
+    <!-- Key stats summary -->
+    <div id="summary">
+        <h2>Key Stats</h2>
+        <p>Average Monthly Savings: <span id="avg-savings">$0</span></p>
+        <p>Largest Expense Category: <span id="largest-expense">None</span></p>
+    </div>
+</body>
+</html>

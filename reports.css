@@ -1,0 +1,140 @@
+/* Reset and general styles */
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Fixed Full-Width Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+
+}
+header h1 {
+    margin: 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 15px 0;
+    text-align: center;
+    background-color: rgb(33, 33, 33);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 100px;
+}
+
+nav ul li a {
+    background-color: rgb(4, 90, 17);
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #3498db;
+    background-color: rgba(236, 240, 241, 0.1);
+}
+
+/* Main content container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Existing styles for the rest of the page */
+h1 {
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Date range picker styles */
+#start-date, #end-date {
+    margin: 10px;
+    padding: 5px;
+}
+
+#generate-report {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#generate-report:hover {
+    background-color: #2980b9;
+}
+
+/* Category filters styles */
+#category-filters {
+    margin: 20px 0;
+}
+
+#category-filters label {
+    margin-right: 15px;
+}
+
+/* Charts styles */
+#charts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#charts canvas {
+
+    max-width: 400px;
+    max-height: 400px;
+    margin-bottom: 20px;
+}
+
+/* Summary styles */
+#summary {
+    background-color: #d4d4d4;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#summary h2 {
+    color: #2c3e50;
+}
+
+#summary p {
+    margin: 10px 0;
+}
+
+#summary span {
+    font-weight: bold;
+    color: #3498db;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav ul li {
+        margin-right: 20px;
+    }
+
+    #charts canvas {
+        max-width: 100%;
+    }
+}

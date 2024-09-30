@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income and Expense Entry Form</title>
+    <link rel="stylesheet" href="income_expense_form1.css">
+</head>
+<body>
+        <header>
+        <h1>Income and Expense Entry</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="income_expense_form.html">Income/Expense</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="savings.html">Savings</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a>Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Income and Expense Entry</h1>
+        <form id="transaction-form">
+            <div class="form-group radio-group">
+                <label>Transaction Type:</label>
+                <div>
+                    <input type="radio" id="income" name="transaction-type" value="income" required>
+                    <label for="income">Income</label>
+                </div>
+                <div>
+                    <input type="radio" id="expense" name="transaction-type" value="expense" required>
+                    <label for="expense">Expense</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="transaction-date">Date:</label>
+                <input type="date" id="transaction-date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" min="0.01" step="0.01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select id="category" required>
+                    <option value="">Select a category</option>
+                    <option value="salary">Salary</option>
+                    <option value="food">Food</option>
+                    <option value="transport">Transport</option>
+                    <option value="utilities">Utilities</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" rows="3"></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <label>Payment Method:</label>
+                <div>
+                    <input type="checkbox" id="cash" name="payment-method" value="cash">
+                    <label for="cash">Cash</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="credit-card" name="payment-method" value="credit-card">
+                    <label for="credit-card">Credit Card</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="bank-transfer" name="payment-method" value="bank-transfer">
+                    <label for="bank-transfer">Bank Transfer</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="receipt">Upload Receipt/Invoice:</label>
+                <div class="file-upload" id="file-upload-area">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <p>Drag & Drop or Click to Upload</p>
+                    <input type="file" id="receipt" accept="image/*,.pdf" style="display: none;">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="recurring" name="recurring">
+                <label for="recurring">Recurring Transaction</label>
+            </div>
+
+            <div id="recurring-options">
+                <div class="form-group">
+                    <label for="frequency">Frequency:</label>
+                    <select id="frequency">
+                        <option value="weekly">Weekly</option>
+                        <option value="monthly">Monthly</option>
+                        <option value="yearly">Yearly</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit">Submit Transaction</button>
+        </form>
+        <div id="success-message">Transaction submitted successfully!</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('transaction-form');
+            const recurringCheckbox = document.getElementById('recurring');
+            const recurringOptions = document.getElementById('recurring-options');
+            const fileUploadArea = document.getElementById('file-upload-area');
+            const fileInput = document.getElementById('receipt');
+            const successMessage = document.getElementById('success-message');
+
+            recurringCheckbox.addEventListener('change', function() {
+                recurringOptions.style.display = this.checked ? 'block' : 'none';
+            });
+
+            fileUploadArea.addEventListener('click', function() {
+                fileInput.click();
+            });
+
+            fileUploadArea.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                this.style.borderColor = '#3498db';
+            });
+
+            fileUploadArea.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                this.style.borderColor = '#ddd';
+            });
+
+            fileUploadArea.addEventListener('drop', function(e) {
+                e.preventDefault();
+                this.style.borderColor = '#ddd';
+                if (e.dataTransfer.files.length) {
+                    fileInput.files = e.dataTransfer.files;
+                    updateFileName(e.dataTransfer.files[0].name);
+                }
+            });
+
+            fileInput.addEventListener('change', function() {
+                if (this.files.length) {
+                    updateFileName(this.files[0].name);
+                }
+            });
+
+            function updateFileName(name) {
+                const fileNameElement = fileUploadArea.querySelector('p');
+                fileNameElement.textContent = name;
+            }
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Here you would typically send the form data to a server
+                // For this example, we'll just show a success message
+                successMessage.style.display = 'block';
+                form.reset();
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 3000);
+            });
+        });
+    </script>
+</body>
+</html>

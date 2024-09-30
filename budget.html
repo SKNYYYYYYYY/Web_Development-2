@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Setup & Goals</title>
+    <link rel="stylesheet" href="budget-goals1.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Budget Setup & Goals</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="income_expense_form.html">Income/Expense</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="savings.html">Savings</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a>Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="budget-setup">
+            <h2>Monthly Budget Setup</h2>
+            <div id="budget-categories"></div>
+            <button id="add-category">Add Category</button>
+            <button id="save-budget">Save Budget</button>
+        </section>
+
+        <section id="budget-overview">
+            <h2>Budget Overview</h2>
+            <div id="budget-chart-container">
+                <canvas id="budget-chart"></canvas>
+            </div>
+        </section>
+
+        <section id="financial-goals">
+            <h2>Financial Goals</h2>
+            <div id="goals-list"></div>
+            <button id="add-goal">Add New Goal</button>
+        </section>
+    </main>
+
+
+
+    <script src="budget-goals.js"></script>
+</body>
+</html>

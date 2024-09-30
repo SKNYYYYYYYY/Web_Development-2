@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History</title>
+    <link rel="stylesheet" href="transaction-history1.css">
+</head>
+<body>
+    <header>
+        <h1>Transaction History</h1>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="income_expense_form.html">Income/Expense</a></li>
+                <li><a href="budget.html">Budget</a></li>
+                <li><a href="savings.html">Savings</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="reports.html">Reports</a></li>
+                <li><a>Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="filters">
+            <h2>Filters</h2>
+            <form id="filter-form">
+                <label for="date-range">Date Range:</label>
+                <select id="date-range">
+                    <option value="7">Last 7 days</option>
+                    <option value="30">Last 30 days</option>
+                    <option value="90">Last 90 days</option>
+                    <option value="custom">Custom Range</option>
+                </select>
+                <div id="custom-date-range" style="display: none;">
+                    <input type="date" id="start-date">
+                    <input type="date" id="end-date">
+                </div>
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="all">All Categories</option>
+                    <!-- Categories will be populated dynamically -->
+                </select>
+                <label for="type">Type:</label>
+                <select id="type">
+                    <option value="all">All Types</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <button type="submit">Apply Filters</button>
+            </form>
+        </section>
+
+        <section id="transaction-list">
+            <h2>Transactions</h2>
+            <table id="transactions-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Transactions will be populated dynamically -->
+                </tbody>
+            </table>
+        </section>
+
+        <section id="summary">
+            <h2>Summary</h2>
+            <p>Total Income: <span id="total-income"></span></p>
+            <p>Total Expenses: <span id="total-expenses"></span></p>
+            <p>Net: <span id="net-amount"></span></p>
+        </section>
+
+        <button id="download-csv">Download CSV</button>
+    </main>
+
+
+    <script src="transaction-history.js"></script>
+</body>
+</html>
