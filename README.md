@@ -1,2 +1,3 @@
 # Web-Development-II
-Lab/DIY tasks with the first Assignment
+CIT-227-043/2022
+Lab tasks ON PHP AND HTML  with the first Assignment
